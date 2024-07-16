@@ -1,0 +1,242 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3b3535;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.images-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Distance between images */
+}
+
+.selected-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 20px; /* Position it at the top */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.6s, opacity 0.6s; /* Smooth transitions */
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.image-wrapper {
+  border-radius: 30%;
+  overflow: hidden;
+  width: 150px; /* Image frame size */
+  height: 150px; /* Image frame size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s, filter 0.3s; /* Animations */
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-wrapper:hover {
+  transform: scale(1.1); /* Zoom on hover */
+  filter: brightness(1.2); /* Increase brightness on hover */
+}
+
+.selected-image-wrapper {
+  border-radius: 30%;
+  overflow: hidden;
+  width: 300px; /* Selected image frame size */
+  height: 300px; /* Selected image frame size */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.6s ease, opacity 0.6s ease; /* Smooth transitions */
+}
+
+.selected-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.transitioning {
+  transform: translateY(50vh) scale(1.5); /* Move up from bottom */
+  opacity: 0; /* Fade out during transition */
+}
+
+.artist-name {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.selected-artist-name {
+  margin-top: 10px;
+  font-size: 1.2rem; /* Larger font for selected artist */
+  transition: font-size 0.6s; /* Smooth transition for font size */
+}
+
+.search-input {
+  background-color: #242424;
+  border: 0;
+  border-radius: 500px;
+  color: #fff !important;
+  height: 32px;
+  padding: 6px 36px;
+  text-overflow: ellipsis;
+  width: 35%;
+  margin-bottom: 20px; /* Space below the search bar */
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #242424;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #1a1a1a;
+}
+
+
+.albums-container {
+  display: flex;
+  flex-wrap: initial;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  position: absolute;
+  bottom: -553px;
+  width: 100%;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  padding: 20px 0;
+}
+
+.album-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.album-image {
+  width: 300px; /* Album image size */
+  height: 300px; /* Album image size */
+  object-fit: cover;
+  border-radius: 30%;
+  transition: transform 0.3s, filter 0.3s; /* Animations */
+}
+
+.album-container:hover .album-image {
+  transform: scale(1.1); /* Zoom on hover */
+  filter: brightness(1.2); /* Increase brightness on hover */
+}
+
+.album-name {
+  margin-top: 19px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.albums-title {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.album-details {
+  width: 23%;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.album-details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.album-details th, .album-details td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.album-details th {
+  background-color: #333;
+  color: #fff;
+}
+
+.duration-header {
+  width: 20px; /* Ajustează dimensiunea imaginii la dimensiunea dorită */
+  height: auto;
+  vertical-align: middle; /* Ajustează poziționarea verticală */
+}
+
+.album-details-container {
+  margin-top: 20px;
+}
+
+.autocomplete-container {
+  max-height: 300px; /* Fixed size container */
+  overflow-y: auto;
+  margin-top: 10px;
+  border: 1px solid white;
+  color: black;
+}
+
+.autocomplete-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.autocomplete-table th, .autocomplete-table td {
+  padding: 8px;
+  border: 1px solid white;
+}
+
+.autocomplete-suggestion:hover {
+  background-color: #f0f0f0;
+}
+
+.song-search-button {
+  margin-top: 10px; /* Modificat pentru a muta butonul mai jos */
+  text-align: center; /* Centrare butonului */
+  right: 20%;
+}
