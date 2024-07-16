@@ -19,7 +19,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* Distance between images */
+  gap: 20px; 
 }
 
 .selected-image-container {
@@ -27,10 +27,10 @@ body, html {
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 20px; /* Position it at the top */
+  top: 20px; 
   left: 50%;
   transform: translateX(-50%);
-  transition: transform 0.6s, opacity 0.6s; /* Smooth transitions */
+  transition: transform 0.6s, opacity 0.6s; 
 }
 
 .image-container {
@@ -48,7 +48,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s, filter 0.3s; /* Animations */
+  transition: transform 0.3s, filter 0.3s; 
 }
 
 .image {
@@ -58,8 +58,8 @@ body, html {
 }
 
 .image-wrapper:hover {
-  transform: scale(1.1); /* Zoom on hover */
-  filter: brightness(1.2); /* Increase brightness on hover */
+  transform: scale(1.1); 
+  filter: brightness(1.2); 
 }
 
 .selected-image-wrapper {
@@ -81,8 +81,8 @@ body, html {
 }
 
 .transitioning {
-  transform: translateY(50vh) scale(1.5); /* Move up from bottom */
-  opacity: 0; /* Fade out during transition */
+  transform: translateY(50vh) scale(1.5); 
+  opacity: 0; 
 }
 
 .artist-name {
@@ -94,8 +94,8 @@ body, html {
 
 .selected-artist-name {
   margin-top: 10px;
-  font-size: 1.2rem; /* Larger font for selected artist */
-  transition: font-size 0.6s; /* Smooth transition for font size */
+  font-size: 1.2rem; 
+  transition: font-size 0.6s; 
 }
 
 .search-input {
@@ -107,7 +107,7 @@ body, html {
   padding: 6px 36px;
   text-overflow: ellipsis;
   width: 35%;
-  margin-bottom: 20px; /* Space below the search bar */
+  margin-bottom: 20px; 
 }
 
 .back-button {
@@ -137,7 +137,6 @@ body, html {
   position: absolute;
   bottom: -553px;
   width: 100%;
-  /* background-color: rgba(0, 0, 0, 0.5); */
   padding: 20px 0;
 }
 
@@ -148,16 +147,16 @@ body, html {
 }
 
 .album-image {
-  width: 300px; /* Album image size */
-  height: 300px; /* Album image size */
+  width: 300px; 
+  height: 300px; 
   object-fit: cover;
   border-radius: 30%;
-  transition: transform 0.3s, filter 0.3s; /* Animations */
+  transition: transform 0.3s, filter 0.3s; 
 }
 
 .album-container:hover .album-image {
-  transform: scale(1.1); /* Zoom on hover */
-  filter: brightness(1.2); /* Increase brightness on hover */
+  transform: scale(1.1); 
+  filter: brightness(1.2); 
 }
 
 .album-name {
@@ -203,9 +202,9 @@ body, html {
 }
 
 .duration-header {
-  width: 20px; /* Ajustează dimensiunea imaginii la dimensiunea dorită */
+  width: 20px; 
   height: auto;
-  vertical-align: middle; /* Ajustează poziționarea verticală */
+  vertical-align: middle; 
 }
 
 .album-details-container {
@@ -213,7 +212,7 @@ body, html {
 }
 
 .autocomplete-container {
-  max-height: 300px; /* Fixed size container */
+  max-height: 300px; 
   overflow-y: auto;
   margin-top: 10px;
   border: 1px solid white;
@@ -236,7 +235,7 @@ body, html {
 }
 
 .song-search-button {
-  margin-top: 10px; /* Modificat pentru a muta butonul mai jos */
-  text-align: center; /* Centrare butonului */
+  margin-top: 10px; 
+  text-align: center; 
   right: 20%;
 }
