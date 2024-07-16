@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import data from '../data.json'; // Import JSON data directly
-import durationImage from '/images/duration.png'; // Import the image for the column header
+import data from '../data.json'; 
+import durationImage from '/images/duration.png'; 
 import heart1Image from '/images/heart1.png';
 import heart2Image from '/images/heart2.png';
 import heart3Image from '/images/heart3.png';
@@ -21,10 +21,10 @@ const App = () => {
   const [selectedArtist, setSelectedArtist] = useState(null);
   const [transitioning, setTransitioning] = useState(false);
   const [selectedAlbum, setSelectedAlbum] = useState(null);
-  const [artistNameForAlbum, setArtistNameForAlbum] = useState(''); // Add state for artist name
-  const [likes, setLikes] = useState({}); // State for managing likes
-  const [isSongSearch, setIsSongSearch] = useState(false); // State to manage the view
-  const [suggestions, setSuggestions] = useState([]); // State for autocomplete suggestions
+  const [artistNameForAlbum, setArtistNameForAlbum] = useState(''); 
+  const [likes, setLikes] = useState({}); 
+  const [isSongSearch, setIsSongSearch] = useState(false); 
+  const [suggestions, setSuggestions] = useState([]); 
 
   useEffect(() => {
     setImages(imagesData);
@@ -42,9 +42,9 @@ const App = () => {
     setTransitioning(true);
     setTimeout(() => {
       setSelectedImage(image);
-      setSelectedArtist(image.name); // Set selected artist
+      setSelectedArtist(image.name); 
       setTransitioning(false);
-    }, 600); // Duration of the transition
+    }, 600); 
   };
 
   const handleBackClick = () => {
@@ -52,13 +52,13 @@ const App = () => {
     setSelectedArtist(null);
     setSearchTerm('');
     setFilteredImages(images);
-    setSelectedAlbum(null); // Clear selected album
-    setArtistNameForAlbum(''); // Clear artist name for album
-    setIsSongSearch(false); // Reset to artist search view
+    setSelectedAlbum(null); 
+    setArtistNameForAlbum(''); 
+    setIsSongSearch(false); 
   };
 
   const handleSongSearchClick = () => {
-    setIsSongSearch(true); // Switch to song search view
+    setIsSongSearch(true); 
   };
 
   const handleSongSearch = (event) => {
@@ -73,8 +73,7 @@ const App = () => {
   const handleLikeClick = (songTitle) => {
     setLikes((prevLikes) => {
       const newLikes = { ...prevLikes };
-      newLikes[songTitle] = !newLikes[songTitle];
-      // Simulate saving to JSON file
+      newLikes[songTitle] = !newLikes[songTitle];  
       console.log('Saving likes to JSON:', newLikes);
       return newLikes;
     });
@@ -101,8 +100,8 @@ const App = () => {
   };
 
   const handleAlbumClick = (album, artistName) => {
-    setSelectedAlbum(album); // Set selected album
-    setArtistNameForAlbum(artistName); // Set artist name for album
+    setSelectedAlbum(album); 
+    setArtistNameForAlbum(artistName); 
   };
 
   const AlbumDetails = ({ album }) => {
@@ -196,7 +195,6 @@ const App = () => {
               ))
             )}
           </div>
-          {/* Butonul "Search Songs" plasat sub secțiunea artiștilor */}
           {!selectedImage && (
             <div className="song-search-button-container">
               <button className="song-search-button" onClick={handleSongSearchClick}>
@@ -204,7 +202,6 @@ const App = () => {
               </button>
             </div>
           )}
-          {/* Render AlbumDetails only if selectedAlbum is truthy */}
           {selectedAlbum && (
             <div className="album-details-container">
               <AlbumDetails album={selectedAlbum} />
